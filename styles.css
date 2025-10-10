@@ -1,0 +1,164 @@
+/* ===========================
+   styles.css - Unit 4 edits
+   =========================== */
+
+/* Color variables */
+:root {
+    --bg-color: #a6a0cf;
+    --text-color: #231942;
+    --accent-color-light: #d2cff5;
+    --accent-color-medium: #684fb5;
+    --accent-color-dark: #482f95;
+    --accent-color-darkest: #231942;
+    --accent-color-green: #28eb76;
+}
+
+/* Global / Body */
+body {
+    font-family: Tahoma, sans-serif; /* unique property */
+    font-size: 16px;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 50px; /* box-model with margin */
+}
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    display: block;
+}
+
+/* Headings (h1-h4) */
+h1 {
+    font-size: 48px;          /* unique property */
+    color: var(--accent-color-darkest);
+    margin: 0;
+    text-align: left;
+}
+
+h2 {
+    color: var(--accent-color-medium);
+    margin-top: 40px;
+}
+
+h3 {
+    color: var(--accent-color-dark);
+}
+
+h4 {
+    color: var(--accent-color-light);
+}
+
+/* Paragraphs */
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Links and pseudo-classes */
+a {
+    color: var(--accent-color-dark);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+a:link { color: var(--accent-color-dark); }
+a:visited { color: var(--accent-color-darkest); }
+a:hover {
+    color: var(--accent-color-green);
+    text-decoration: underline;
+}
+a:active { color: var(--accent-color-medium); }
+
+/* Link card style */
+a.block {
+    display: block;
+    border: 1px solid var(--accent-color-dark);  /* border property */
+    border-radius: 8px;                           /* border-radius property */
+    padding: 15px;                                /* padding property */
+    margin: 10px 0;
+    transition: background 0.3s, color 0.3s;
+}
+a.block:hover {
+    background-color: var(--accent-color-dark);
+    color: white;
+}
+
+/* Buttons */
+button {
+    background-color: var(--accent-color-dark);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: var(--accent-color-medium);
+}
+
+/* ===========================
+   Header selectors (3+ unique)
+   =========================== */
+.header {                         /* class selector */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;                /* padding - box model */
+    margin-bottom: 20px;          /* margin */
+    background-color: var(--accent-color-light);
+    border-radius: 12px;
+}
+#header-img {
+    width: 150px;        /* Sets the logo width */
+    max-width: 100%;     /* Makes it responsive on smaller screens */
+    margin-right: 20px;  /* Space between logo and text */
+    display: block;      /* Ensures proper layout in header */
+}
+#campus-img, #downtown-img {
+    width: 400px;       /* Optional: size to fit page layout */
+    max-width: 100%;    /* Keep responsive */
+    margin: 10px 0;     /* Vertical spacing between elements */
+    border-radius: 8px; /* Slightly rounded corners for style */
+    display: block;
+}
+
+#header-left {                    /* id selector */
+    width: 35%;                   /* width % layout */
+}
+
+#header-right {                   /* id selector */
+    width: 60%;
+    text-align: left;
+}
+
+#header-img {                     /* id selector */
+    width: 150px;
+    max-width: 100%;
+    margin-right: 20px;
+}
+
+.header-button {                   /* class selector for button container */
+    margin-top: 10px;
+}
+
+/* Footer (fixed) */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--accent-color-dark);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000; /* keep over content */
+}
+.footer a {
+    color: white;
+    margin: 0 10px;
+}
