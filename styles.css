@@ -79,7 +79,7 @@ a.block {
     border-radius: 8px;                           /* border-radius property */
     padding: 15px;                                /* padding property */
     margin: 10px 0;
-    transition: background 0.3s, color 0.3s;
+    background-color: var(--accent-color-light);
 }
 a.block:hover {
     background-color: var(--accent-color-dark);
@@ -101,37 +101,80 @@ button:hover {
     background-color: var(--accent-color-medium);
 }
 
+/*** Navigation bar (navbar) ***
+  
+  Purpose:
+  - Add style rules for your website's navbar
+
+  When To Modify:
+  - [ ] Project 4 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+.navbar ul {
+     list-style-type: none;        
+    overflow: hidden;             
+    position: fixed;             
+    top: 0;                       
+    left: 0;                      
+    width: 100%;                  
+    background-color: var(--accent-color-dark);  
+    margin-bottom: 60px;          
+    z-index: 1000;                
+    padding: 0;      */
+    
+}
+
+.navbar ul li {
+    float: left;
+}
+
+.navbar ul li a {
+    display: block;               
+    color: white;               
+    text-align: center;           
+    padding: 14px 20px;          
+    text-decoration: none;       
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    background-color: var(--accent-color-medium); 
+    color: var(--accent-color-green);    
+}
 /* ===========================
    Header selectors (3+ unique)
    =========================== */
-.header {                         /* class selector */
+.header-container {                        
     display: flex;
+    flex-direction: row;
+    text-align: center;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;                /* padding - box model */
-    margin-bottom: 20px;          /* margin */
+    padding: 20px;                
+    margin-bottom: 20px;          
     background-color: var(--accent-color-light);
     border-radius: 12px;
 }
 #header-img {
-    width: 150px;        /* Sets the logo width */
-    max-width: 100%;     /* Makes it responsive on smaller screens */
-    margin-right: 20px;  /* Space between logo and text */
-    display: block;      /* Ensures proper layout in header */
+    width: 150px;        
+    max-width: 100%;     
+    margin-right: 25px;  
+    display: block;      
 }
 #campus-img, #downtown-img {
-    width: 400px;       /* Optional: size to fit page layout */
-    max-width: 100%;    /* Keep responsive */
-    margin: 10px 0;     /* Vertical spacing between elements */
-    border-radius: 8px; /* Slightly rounded corners for style */
+    width: 400px;       
+    max-width: 100%;    
+    margin: 10px 0;     
+    border-radius: 8px; 
     display: block;
 }
 
-#header-left {                    /* id selector */
-    width: 35%;                   /* width % layout */
+.header-item:nth-of-type(1) {                    
+    width: 30%;                  
 }
 
-#header-right {                   /* id selector */
+.header-item:nth-of-type(2){                   
     width: 60%;
     text-align: left;
 }
@@ -162,3 +205,72 @@ button:hover {
     color: white;
     margin: 0 10px;
 }
+/* ===========================
+   Step 4: Dark Mode Styles
+   =========================== */
+
+/* When dark mode is active, the whole page background and text color change */
+.dark-mode {
+  background-color: var(--accent-color-darkest);
+  color: whitesmoke;
+}
+
+/* Example of grouped selectors: all headings turn white in dark mode */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+  color: darkslateblue;
+  #theme-button {
+    font-family: "Trebuchet MS", sans-serif;  /* sleek, modern font */
+    color: #e8e9f3;                           /* soft white text */
+    background-color: #5b5f97;                /* muted lavender-blue */
+    border: 2px solid #9fa4c4;                /* light blue-gray border */
+    padding: 12px 28px;                       /* larger clickable area */
+    border-radius: 12px;                      /* smooth rounded corners */
+    text-decoration: underline double #c9c9e0;/* subtle decorative underline */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* gentle shadow for depth */
+    cursor: pointer;
+    transition: all 0.3s ease;                /* smooth hover transition */
+}
+
+/* Hover effect for interactivity */
+#theme-button:hover {
+    background-color: #7a77b9;                /* lighter lavender-blue on hover */
+    color: #ffffff;                           /* brighter white text */
+    border-color: #bfc5e0;                    /* softer border highlight */
+    text-decoration: underline wavy #e0e0ff;  /* wavy underline on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+/*** RSVP Section ***
+  
+  Purpose:
+  - Add style rules for your website's RSVP form
+
+  When To Modify:
+  - [ ] Project 6 (REQUIRED FEATURE)
+  - [ ] Project 7 (REQUIRED FEATURE)
+  - [ ] Any time after
+***/
+
+.rsvp-container {
+    display:flex;
+    flex-direction: row;
+    gap:20px;
+    width:100%;
+    padding-bottom: 50px;
+}
+.rsvp-para {
+    width:55%;
+    padding-right:10px;
+}
+.rsvp-participants {
+    width: 45%;
+    padding-right:10px;
+}
+.error {
+    border: 2px solid red;
+    background-color: #ffd6d6;
+    border-radius: 5px;
+    padding: 5px;
+}
+/* Add other rsvp-related selectors here */
