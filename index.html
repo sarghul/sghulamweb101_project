@@ -5,169 +5,221 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>byGSUforGSU | Campus Events Hub</title>
     <link rel="icon" href="./img/logo500.png">
-    <!-- [ADDED] Link to external stylesheet -->
+    <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="styles.css">
-</head>
-        <title>ForGSUbyGSU | Campus Events Hub</title>
-        <style>
-            /* Style rules go here. */
-            body {
-                   font-family: 'Poppins', sans-serif;
-                background-color: #a3a3e2;
-                margin: 20px;
-            }
-            h1 {
-                color: #16007a;
-                background-color: #dddef8;
-                font-size: 48px;
-                text-align: center;
-                padding: 10px;
-            }
 
-            h2, h3 {
-                color: #0048a6;
-            }
+    <style>
+      /* Inline style rules go here. */
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #a3a3e2;
+        margin: 20px;
+      }
 
-            button {
-                background-color: #0039a6;
-                color: rgb(255, 255, 255);
-                border: none;
-                padding: 10px 20px;
-                margin: 5px;
-                border-radius: 8px;
-                font-size: 16px;
-            }
+      h1 {
+        color: #16007a;
+        background-color: #dddef8;
+        font-size: 48px;
+        text-align: center;
+        padding: 10px;
+      }
 
-            button:hover {
-                background-color: #0050d1;
-            }
-        </style>
-    </head>
-    
-    <body>
-    
-        <!-- navbar [PLACEHOLDER] [ADDED IN UNIT 4] -->
+      h2, h3 {
+        color: #0048a6;
+      }
 
-        <!-- headings
+      button {
+        background-color: #0039a6;
+        color: rgb(255, 255, 255);
+        border: none;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 8px;
+        font-size: 16px;
+      }
 
-        Purpose:
-        - Main header section of the webpage
-        - Contains the title, subtitle, image, and key buttons for the webpage
+      button:hover {
+        background-color: #0050d1;
+      }
 
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 3 (REQUIRED FEATURE) 
-        - [ ] Project 4 (REQUIRED FEATURE) 
-        - [ ] Any time after
-        -->
-  <div class="header">
-    <div id="header-left">
-       <img id="header-img" src="https://i.pinimg.com/1200x/0c/dd/23/0cdd23e3c53288fbbdeb41ea1c3fc28b.jpg" alt="Welcome to GSU" />
+      /* Flexbox Layouts (Stretch Feature) */
+      .header-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 20px 0;
+      }
 
+      .header-item {
+        flex: 1 1 300px;
+        text-align: center;
+      }
+
+      #upcoming-events {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        text-align: center;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: center;
+        background-color: #16007a;
+        color: white;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      .footer a {
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .header-container {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#upcoming-events">Event Schedule</a></li>
+        <li><a href="https://engagement.gsu.edu/student-center/" target="_blank">Resources</a></li>
+        <li><a href="https://www.gsu.edu" target="_blank">Official GSU Site</a></li>
+        <li><button id="theme-button">Toggle Dark Mode</button></li>
+      </ul>
     </div>
-    <div id="header-right">
+
+    <!-- Header -->
+    <div class="header-container">
+      <div class="header-item">
+        <img id="header-img" src="https://i.pinimg.com/1200x/0c/dd/23/0cdd23e3c53288fbbdeb41ea1c3fc28b.jpg" alt="Welcome to GSU" />
+      </div>
+      <div class="header-item">
         <h1>byGSUforGSU</h1>
         <h3>Connecting Panthers to On & Off-Campus Events</h3>
         <div class="header-button">
-            <button type="button" onclick="document.getElementById('upcoming-events').scrollIntoView();">Upcoming Events</button>
-            <button type="button" onclick="document.getElementById('submit-event').scrollIntoView();">Submit an Event</button>
+          <button type="button" onclick="document.getElementById('upcoming-events').scrollIntoView();">Upcoming Events</button>
+          <button type="button" onclick="document.getElementById('submit-event').scrollIntoView();">Submit an Event</button>
         </div>
+      </div>
     </div>
-</div>
 
-        
-        <!-- about
-
-        Purpose:
-        - Section for general info about the event
-        - Contains a video, description, and key points about the event
-
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 2 (STRETCH FEATURE) 
-        - [ ] Project 4 (STRETCH FEATURE) 
-        - [ ] Any time between / after
-        --> 
+    <!-- About -->
     <section id="about">
-     <h2>About the Event</h2>
-        <p><b>byGSUforGSU</b> is a student-led initiative that highlights exciting events happening in and around Georgia State University. From club fairs and concerts to community service opportunities and networking nights — it’s your one-stop hub for everything Panther-related!</p>
-        <p>The platform was designed to help students easily find events, explore new interests, and connect with others across all GSU campuses. Whether you live on campus or commute from downtown Atlanta, you’ll always know what’s happening next.</p>
-        <p>This webpage brings together the best of student life — <i>by students, for students</i>.</p>
-    </section>
-           <h3>What to Expect</h3>
-        <h4>Event Highlights</h4>
-        <ul>
-            <li><b>Discover New Events:</b> <i>Find concerts, club fairs, and workshops tailored to your interests.</i></li>
-            <li><b>Get Involved:</b> <i>Participate in events that strengthen GSU’s community spirit.</i></li>
-            <li><b>Stay Connected:</b> <i>Meet fellow Panthers and stay updated on what’s happening near you.</i></li>
-        </ul>
-
-        <!-- schedule
-
-        Purpose:
-        - Section for specific info about the event's schedule
-        - Contains images and descriptions of each activity
-
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 4 (STRETCH FEATURE) 
-        - [ ] Any time between / after
-        --> 
-        <section id="upcoming-events">
-        <h2>Event Schedule</h2>
-
-        <img src="https://i.pinimg.com/736x/f2/3f/cd/f23fcd187089681f0e8d2813a2079848.jpg" alt="Pounce" width="400" />
-
-        <h3>Campus Kickoff Fair</h3>
-        <p>A fun-filled day of clubs, games, food trucks, and giveaways on the GSU Green!</p>
-            
-        <img src="https://i.pinimg.com/736x/5b/df/29/5bdf2925ea739c4e4dca116dcb1dc2b8.jpg" alt="GSU campus view" width="400" />
-
-        <h3>Downtown Mixer</h3>
-        <p>An off-campus student social event featuring local artists, music, and food vendors.</p>
-       </section>
-
-        <section id="submit-event">
-        <h4>Submit an Event</h4>
-        <p>Feature coming soon!</p>
+      <h2>About the Event</h2>
+      <p><b>byGSUforGSU</b> is a student-led initiative that highlights exciting events happening in and around Georgia State University. From club fairs and concerts to community service opportunities and networking nights — it’s your one-stop hub for everything Panther-related!</p>
+      <p>The platform was designed to help students easily find events, explore new interests, and connect with others across all GSU campuses. Whether you live on campus or commute from downtown Atlanta, you’ll always know what’s happening next.</p>
+      <p>This webpage brings together the best of student life — <i>by students, for students</i>.</p>
     </section>
 
-        <!-- rsvp [PLACEHOLDER] [ADDED IN UNIT 6] -->
-        <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] --> 
+    <h3>What to Expect</h3>
+    <h4>Event Highlights</h4>
+    <ul>
+      <li><b>Discover New Events:</b> <i>Find concerts, club fairs, and workshops tailored to your interests.</i></li>
+      <li><b>Get Involved:</b> <i>Participate in events that strengthen GSU’s community spirit.</i></li>
+      <li><b>Stay Connected:</b> <i>Meet fellow Panthers and stay updated on what’s happening near you.</i></li>
+    </ul>
 
-        <!-- links
+    <!-- Upcoming Events -->
+    <section id="upcoming-events">
+      <h2>Event Schedule</h2>
+      <img src="https://i.pinimg.com/736x/f2/3f/cd/f23fcd187089681f0e8d2813a2079848.jpg" alt="Pounce" width="400" />
+      <h3>Campus Kickoff Fair</h3>
+      <p>A fun-filled day of clubs, games, food trucks, and giveaways on the GSU Green!</p>
 
-        Purpose:
-        - Links to other resources related to the event
+      <img src="https://i.pinimg.com/736x/5b/df/29/5bdf2925ea739c4e4dca116dcb1dc2b8.jpg" alt="GSU campus view" width="400" />
+      <h3>Downtown Mixer</h3>
+      <p>An off-campus student social event featuring local artists, music, and food vendors.</p>
+    </section>
 
-        When To Modify:
-        - [ ] Project 2 (STRETCH FEATURE) 
-        - [ ] Project 4 (STRETCH FEATURE) 
-        - [ ] Any time between / after
-        --> 
-        
+<section id="rsvp">
+  <h2>RSVP</h2>
+  <p id="rsvp-count">⭐ 3 people have RSVP'd to this event!</p>
+  <div class="rsvp-container">
+    <div class="rsvp-para">
+      <p>
+         Welcome to <b>byGSUforGSU</b> — your go-to hub for all things Panther life! 💜  
+    Whether you’re discovering campus for the first time or already a proud GSU regular, this is where connections, creativity, and community come together.  
+    From music nights and club fairs to networking socials and volunteer drives, every event is designed to help you make memories and meet amazing people.  
+    Don’t just scroll — get involved! RSVP below to save your spot at our next big celebration and be part of what makes Georgia State shine. 🐾
+      </p>
+    </div>
 
-        <!-- This <a> block is one link.  Copy and paste all 6 lines to create another link. -->
-        <h2></h2>
-        <a class="block" href="https://studentcenter.gsu.edu/">
-            <article>
-                <h3>GSU Student Center Events</h3>
-             <p>Find official Georgia State University student events and activities.</p>
-            </article>
-        <a class="block" href="https://involvement.gsu.edu/">
-            <article>
-                <h3>Panther Involvement Network</h3>
-                <p>Explore clubs, organizations, and leadership opportunities at GSU.</p>
-            </article>
-        </a>
-        <!-- footer [PLACEHOLDER] [ADDED IN UNIT 3] -->
-        <!-- script [PLACEHOLDER] [ADDED IN UNIT 5] -->
-<!-- Fixed Footer (Stretch Feature) -->
-<div class="footer">
-    <p>
+    <div class="rsvp-participants">
+      <p>🐾 Dounya J. from Atlanta Campus has RSVP'd for Campus Kickoff Fair.</p>
+      <p>🐾 Alina S. from Perimeter Campus has RSVP'd for Downtown Mixer.</p>
+      <p>🐾 Lauryn J. from Decatur Campus has RSVP'd for Downtown Mixer.</p>
+    </div>
+  </div>
+   <!--- Sign RSVP Form --->
+    <div class="form-container">
+        <form id="rsvp-form" title="rsvp-form">
+           <label for="name">Full Name:</label>
+<input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" placeholder="Enter your GSU email" required>
+
+<label for="campus">Campus:</label>
+<select id="campus" name="campus" required>
+  <option value="">Select your campus</option>
+  <option value="atlanta">Atlanta</option>
+  <option value="clarkston">Clarkston</option>
+  <option value="decatur">Decatur</option>
+  <option value="dunwoody">Dunwoody</option>
+  <option value="newton">Newton</option>
+  <option value="alpharetta">Alpharetta</option>
+</select>
+        </form>
+        <!-- Submit button -->
+        <button id="rsvp-button">Submit RSVP</button>
+    </div>      
+</div>
+</section>
+
+    <!-- Links -->
+    <a class="block" href="https://calendar.gsu.edu/calendar?event_types%5B%5D=83552" target="_blank">
+      <article>
+        <h3>GSU Student Center Events</h3>
+        <p>Find official Georgia State University student events and activities.</p>
+      </article>
+    </a>
+
+    <a class="block" href="https://pin.gsu.edu/" target="_blank">
+      <article>
+        <h3>Panther Involvement Network</h3>
+        <p>Explore clubs, organizations, and leadership opportunities at GSU.</p>
+      </article>
+    </a>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>
         <a href="https://www.gsu.edu/" target="_blank" rel="noopener">GSU Official Site</a> |
         <a href="https://studentcenter.gsu.edu/" target="_blank" rel="noopener">Student Center</a>
-    </p>
-</div>
-    </body>
+      </p>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="index.js"></script>
+  </body>
 </html>
